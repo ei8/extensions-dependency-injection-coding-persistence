@@ -10,10 +10,10 @@ namespace ei8.Extensions.DependencyInjection.Coding.Persistence
 {
     public static class TinyIoCContainerExtensions
     {
-        public static void AddEnsembleRepository(this TinyIoCContainer container, string cortexLibraryOutBaseUrl, int queryResultLimit, string appUserId)
+        public static void AddNetworkRepository(this TinyIoCContainer container, string cortexLibraryOutBaseUrl, int queryResultLimit, string appUserId)
         {
-            container.Register<IEnsembleRepository>(
-                (tic, npo) => new EnsembleRepository(
+            container.Register<INetworkRepository>(
+                (tic, npo) => new NetworkRepository(
                     container.Resolve<INeuronQueryClient>(),
                     cortexLibraryOutBaseUrl,
                     queryResultLimit,
